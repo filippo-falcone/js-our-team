@@ -42,9 +42,9 @@ const team = [
 for (let i = 0; i < team.length; i++) {
     const thisMember = team[i];
     cardContainer.innerHTML += `
-    <div class="col-4" >
+    <div class="col-9 mx-auto col-md-6 col-lg-4" >
         <div class="card">
-            <img src="${thisMember.image}" class="card-img-top object-contain" height="356">
+            <img src="${thisMember.image}" class="card-img-top">
             <div class="card-body text-center">
                 <div>${thisMember.name}</div>
                 <div>${thisMember.role}</div>
