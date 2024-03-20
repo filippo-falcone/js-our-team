@@ -16,3 +16,5 @@ Trasformare la stringa foto in una immagine effettiva
 
 #### BONUS 2:
 Organizzare i singoli membri in card/schede
+
+Preview ---> https://filippo-falcone.github.io/js-our-team/
