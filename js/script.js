@@ -37,7 +37,7 @@ const team = [
         image: 'barbara-ramos-graphic-designer.jpg'
     }
 ];
-/* OUTPUT */
+/* BODY */
 for (let i = 0; i < team.length; i++) {
     const thisMember = team[i];
     tableBody.innerHTML += `
