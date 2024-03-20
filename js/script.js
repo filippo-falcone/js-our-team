@@ -1,6 +1,6 @@
 /*
 // Creo un array composto da oggetti composti da 'name', 'role', 'image'
-// Creo un ciclo for per leggere il contenuto e stampare le caratteristiche di ogni membro del team
+// Creo un ciclo for per leggere il contenuto
 // Stampo il contenuto dell'array nel DOM
 // Bonus 1: trasformo la caratteristica image  in immagini nel dom
 */
