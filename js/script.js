@@ -1,8 +1,10 @@
 /*
 // Creo un array composto da oggetti composti da 'name', 'role', 'image'
 // Creo un ciclo for per leggere il contenuto e stampare le caratteristiche di ogni membro del team
+// Stampo il contenuto dell'array nel DOM
 */
 /* MATERIALS */
+const tableBody = document.querySelector('#table-body');
 const team = [
     {
         name: 'Wayne Barnett',
@@ -35,10 +37,14 @@ const team = [
         image: 'barbara-ramos-graphic-designer.jpg'
     }
 ];
-/* BODY */
+/* OUTPUT */
 for (let i = 0; i < team.length; i++) {
     const thisMember = team[i];
-    console.log(`Nome: ${thisMember.name}`);
-    console.log(`Ruolo: ${thisMember.role}`);
-    console.log(`Immagine: ${thisMember.image}`);
+    tableBody.innerHTML += `
+    <tr>
+        <td>${thisMember.name}</td>
+        <td>${thisMember.role}</td>
+        <td>${thisMember.image}</td>
+    </tr>
+    `
 }
