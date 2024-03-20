@@ -5,7 +5,7 @@
 // Bonus 1: trasformo la caratteristica image  in immagini nel dom
 */
 /* MATERIALS */
-const tableBody = document.querySelector('#table-body');
+const cardContainer = document.querySelector('#card-container');
 const team = [
     {
         name: 'Wayne Barnett',
@@ -41,11 +41,14 @@ const team = [
 /* BODY */
 for (let i = 0; i < team.length; i++) {
     const thisMember = team[i];
-    tableBody.innerHTML += `
-    <tr>
-        <td>${thisMember.name}</td>
-        <td>${thisMember.role}</td>
-        <td><img src="${thisMember.image}" width="100"></td>
-    </tr>
-    `
+    cardContainer.innerHTML += `
+    <div class="col-4" >
+        <div class="card">
+            <img src="${thisMember.image}" class="card-img-top object-contain" height="356">
+            <div class="card-body text-center">
+                <div>${thisMember.name}</div>
+                <div>${thisMember.role}</div>
+            </div>
+        </div>
+    </div >`
 }
