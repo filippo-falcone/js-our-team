@@ -44,29 +44,24 @@ const team = [
 
 for (let i = 0; i < team.length; i++) {
     const thisMember = team[i];
-    const name = thisMember.name;
-    const role = thisMember.role;
-    const image = thisMember.image;
-    generateCardTemplate(name, role, image); // Metodo con il template literals
-    // generateCardAppend(name, role, image); // Metodo con append
+    generateCardTemplate(thisMember); // Metodo con il template literals
+    // generateCardAppend(thisMember); // Metodo con append
 }
 
 /* FUNCTIONS */
 
 // Funzione che genera un elemento del DOM che rappresenta una card (metodo con template literals)
-// name: elemento che rappresenta la parola chiave dell'oggetto
-// role: elemento che rappresenta la parola chiave dell'oggetto
-// image: elemento che rappresenta la parola chiave dell'oggetto
+// member: elemento che rappresenta l'intero oggetto
 // return: elemento del dom che rappresenta una un cotainer con le card
-function generateCardTemplate(name, role, image) {
+function generateCardTemplate(member) {
     const cardContainer = document.querySelector('#card-container');
     cardContainer.innerHTML += `
     <div class="col-9 col-md-6 col-lg-4 mx-auto" >
         <div class="card">
-            <img src="${image}" class="card-img-top">
+            <img src="${member.image}" class="card-img-top">
             <div class="card-body text-center">
-                <div>${name}</div>
-                <div>${role}</div>
+                <div>${member.name}</div>
+                <div>${member.role}</div>
             </div>
         </div>
     </div >`
@@ -74,11 +69,9 @@ function generateCardTemplate(name, role, image) {
 }
 
 // Funzione che genera un elemento del DOM che rappresenta una card (metodo con create element)
-// name: elemento che rappresenta la parola chiave dell'oggetto
-// role: elemento che rappresenta la parola chiave dell'oggetto
-// image: elemento che rappresenta la parola chiave dell'oggetto
+// member: elemento che rappresenta l'intero oggetto
 // return: elemento del dom che rappresenta una colonna con una card
-function generateCardAppend(name, role, image) {
+function generateCardAppend(member) {
     const col = document.createElement('div');
     const card = document.createElement('div');
     const img = document.createElement('img');
@@ -90,12 +83,12 @@ function generateCardAppend(name, role, image) {
     col.classList.add('col-lg-4');
     col.classList.add('mx-auto');
     card.classList.add('card');
-    img.src = image;
+    img.src = member.image;
     img.classList.add('card-img-top');
     cardBody.classList.add('card-body');
     cardBody.classList.add('text-center');
-    cardName.innerText = name;
-    cardrole.innerText = role;
+    cardName.innerText = member.name;
+    cardrole.innerText = member.role;
     cardContainer.append(col);
     col.append(card);
     card.append(img, cardBody);
